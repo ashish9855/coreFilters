@@ -10,8 +10,18 @@
 
 @interface iCoreFilters : NSObject
 
--(void)setFilterToImage:(NSInteger)getFilterName image:(UIImage *)getImage sendSelf:(id)getSelf view:(UIView *)sendView sendImageView:(UIImageView *)getImageView;
--(NSArray *)getAllFilters ;
+{
+    // array of filters
+    NSArray *arrOfFilters;
+}
+
+// class methods
+-(UIImage *)applyFilters:(NSInteger)getRow image:(UIImage *)getImage;
+-(NSArray *)getAllFilters;
+-(NSInteger)getCountOfAllFilters;
+
+// singleton
++(iCoreFilters *)sharedInstanceSingleton;
 
 @property(nonatomic,strong)NSString *getall;
 
